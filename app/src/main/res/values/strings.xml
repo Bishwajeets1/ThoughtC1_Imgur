@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Imgur Gallery</string>
+    <string name="gride_view">Gride View</string>
+    <string name="search_for_images">Search for images..</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="loading">Loading</string>
+</resources>
