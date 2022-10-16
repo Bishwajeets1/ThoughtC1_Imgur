@@ -10,6 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         applicationId "com.example.imgurapiapp"
         minSdk 21
         targetSdk 32

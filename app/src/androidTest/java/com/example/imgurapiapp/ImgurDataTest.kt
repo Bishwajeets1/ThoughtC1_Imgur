@@ -11,9 +11,23 @@ import java.io.IOException
 class ImgurDataTest {
 
     @Test
-    fun testApiResponse() {
+    fun getImageApiResponse() {
         val imgurApiService: ImgurApiService = RetrofitModule.provideDefaultRetrofit().create(ImgurApiService::class.java)
         val call: Call<ImgurImageResponse> = imgurApiService.getImagesForTest("top","time","week",1)
+
+        try{
+            val response: Response<ImgurImageResponse> = call.execute()
+            val imgurResponse: ImgurImageResponse? = response.body()
+            assert(imgurResponse?.success?:false)
+        }catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    @Test
+    fun getSearchImageApiResponse() {
+        val imgurApiService: ImgurApiService = RetrofitModule.provideDefaultRetrofit().create(ImgurApiService::class.java)
+        val call: Call<ImgurImageResponse> = imgurApiService.searchImageForTest("top","time" ,1,"cat")
 
         try{
             val response: Response<ImgurImageResponse> = call.execute()

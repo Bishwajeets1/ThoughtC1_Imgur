@@ -34,6 +34,15 @@ interface ImgurApiService {
         @Path("page") page:Int
     ) : Call<ImgurImageResponse>
 
+    @TestOnly
+    @GET("gallery/search/{sort}/{window}/{page}")
+    fun searchImageForTest(
+        @Path("sort") sort :String,
+        @Path("window") window:String,
+        @Path("page") page:Int,
+        @Query("q") query: String
+    ):Call<ImgurImageResponse>
+
 
 
 }
